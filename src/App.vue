@@ -1,32 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div id="main-wrapper" class="d-flex flex-column">
+    <header>
+      <NavBar />
+    </header>
+    <main class="d-flex flex-grow-1">
+      <router-view />
+    </main>
+    <footer class="text-white">
+      <Footer />
+    </footer>
   </div>
 </template>
 
+<script>
+import layout from '@/mixins/layout';
+
+export default {
+  mixins: [layout],
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+#main-wrapper {
+  min-height: 100vh;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+footer {
+  background: radial-gradient(at 30% top, #031d33 0%, var(--bs-primary) 70%);
+  box-sizing: border-box;
 }
 </style>
