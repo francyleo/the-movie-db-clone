@@ -14,28 +14,53 @@
           <h3 class="text-uppercase m-0">THE BASICS</h3>
           <ul>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                About TMDB
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">About TMDB</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Contact Us
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Contact Us</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Support Forums
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Support Forums</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                API
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">API</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                System Status
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">System Status</a>
               </router-link>
             </li>
           </ul>
@@ -44,18 +69,33 @@
           <h3 class="text-uppercase m-0">GET INVOLVED</h3>
           <ul>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Contribution Bible
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Contribution Bible</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Add New Movie
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Add New Movie</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Add New TV Show
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Add New TV Show</a>
               </router-link>
             </li>
           </ul>
@@ -64,23 +104,43 @@
           <h3 class="text-uppercase m-0">Community</h3>
           <ul>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Guidelines
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Guidelines</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Discussions
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Discussions</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Leaderboard
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Leaderboard</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Twitter
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Twitter</a>
               </router-link>
             </li>
           </ul>
@@ -89,18 +149,33 @@
           <h3 class="text-uppercase m-0">Legal</h3>
           <ul>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Terms of Use
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Terms of Use</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                API Terms of Use
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">API Terms of Use</a>
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="text-white text-decoration-none">
-                Privacy Policy
+              <router-link
+                class="text-white text-decoration-none"
+                to="/"
+                v-slot="{ href, navigate }"
+                custom
+              >
+                <a :href="href" @click="navigate">Privacy Policy</a>
               </router-link>
             </li>
           </ul>
