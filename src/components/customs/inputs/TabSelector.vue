@@ -1,5 +1,5 @@
 <template>
-  <div v-if="tabs.length !== 0" class="tab-selector-container">
+  <div class="tab-selector-container">
     <span
       v-for="(tab, index) in tabs"
       :key="index"
@@ -22,11 +22,13 @@ export default {
     },
     tabs: {
       type: Array,
-      default: () => [],
+      required: true,
     },
   },
   methods: {
     activeTab(tabIndex) {
+      if (!this.$refs['tabs']) return;
+
       const threshold = 1;
       const currentTab = this.$refs['tabs'][tabIndex];
       const { offsetLeft, offsetWidth } = currentTab;

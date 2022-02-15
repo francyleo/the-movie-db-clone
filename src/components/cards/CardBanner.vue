@@ -34,7 +34,7 @@ export default {
     },
     rate: {
       type: Number,
-      default: 100,
+      default: 0,
     },
   },
   data: () => ({
@@ -74,6 +74,12 @@ export default {
     height: 225px;
     overflow: hidden;
     border-radius: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .card-banner-rate {

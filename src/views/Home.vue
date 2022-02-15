@@ -6,20 +6,27 @@
       hasSearch
     />
     <section class="mt-5">
-      <tab-switcher
-        title="What's Popular"
-        :tabs="['Streaming', 'On TV', 'For Rent', 'In Theaters']"
-      >
-        <template v-slot:tabs>
+      <TabSwitcher title="What's Popular">
+        <Tab title="Streaming" class="d-flex" selected>
           <CardBanner
-            v-for="index in 10"
+            v-for="(movie, index) in popularMovies"
             :key="index"
-            title="The Walking Dead"
-            description="Oct 31, 2021"
-            image="https://via.placeholder.com/150x225"
+            :title="movie.title"
+            :description="movie.release_date"
+            :image="movie.poster_path"
+            :rate="movie.vote_average * 10"
           />
-        </template>
-      </tab-switcher>
+        </Tab>
+        <Tab title="On TV">
+          <h1 class="text-black">On TV</h1>
+        </Tab>
+        <Tab title="For Rent">
+          <h1 class="text-black">For Rent</h1>
+        </Tab>
+        <Tab title="In Theaters">
+          <h1 class="text-black">In Theaters</h1>
+        </Tab>
+      </TabSwitcher>
     </section>
   </div>
 </template>
@@ -31,7 +38,13 @@ import cards from '@/mixins/cards';
 
 export default {
   mixins: [layout, customs, cards],
+  computed: {
+    popularMovies() {
+      return this.$store.getters['movies/popular'];
+    },
+  },
+  mounted() {
+    this.$store.dispatch('movies/getPopular');
+  },
 };
 </script>
-
-<style lang="scss" scoped></style>

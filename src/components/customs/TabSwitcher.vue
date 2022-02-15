@@ -2,12 +2,14 @@
   <div class="tab-switcher-container">
     <div class="tab-switcher-header">
       <h2 class="text-black">{{ title }}</h2>
-      <TabSelector :tabs="tabs" @onChange="onChangeTab" />
+      <TabSelector
+        :tabs="tabsNormalized"
+        :defaultActiveTab="activeTab"
+        @onChange="onChangeTab"
+      />
     </div>
     <div class="tab-switcher-content">
-      <template v-for="(tab, index) in tabs">
-        <slot v-if="activeTab == index" name="tabs" v-bind="{ index, tab }" />
-      </template>
+      <slot />
     </div>
   </div>
 </template>
@@ -19,21 +21,30 @@ export default {
       type: String,
       default: '',
     },
-    tabs: {
-      type: Array,
-      default: () => [],
-    },
   },
   components: {
     TabSelector: () => import('@components/customs/inputs/TabSelector'),
   },
   data: () => ({
-    activeTab: 0,
+    tabs: [],
   }),
+  computed: {
+    tabsNormalized() {
+      return this.tabs.map(tab => tab.title);
+    },
+    activeTab() {
+      return this.tabs.findIndex(tab => tab.isActive);
+    },
+  },
   methods: {
     onChangeTab(index) {
-      this.activeTab = index;
+      this.tabs.forEach((tab, tabIndex) => {
+        tab.isActive = tabIndex === index;
+      });
     },
+  },
+  created() {
+    this.tabs = this.$children;
   },
 };
 </script>
@@ -60,8 +71,8 @@ export default {
 
   .tab-switcher-content {
     position: relative;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: stretch; */
     padding: 20px 0;
     margin: 0;
     width: 100%;
