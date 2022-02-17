@@ -54,14 +54,32 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 40px;
+  padding-top: 24px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    background-image: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 1));
+    z-index: 4;
+  }
 
   .tab-switcher-header {
     display: flex;
     align-items: center;
+    padding-left: 40px;
+    z-index: 3;
 
     h2 {
+      color: var(--bs-black);
       font-size: 2.5rem;
+
+      &.title-in-background {
+        color: var(--bs-white);
+      }
     }
 
     > div {
@@ -71,14 +89,25 @@ export default {
 
   .tab-switcher-content {
     position: relative;
-    /* display: flex;
-    align-items: stretch; */
-    padding: 20px 0;
+    padding: 20px 0 0 16px;
     margin: 0;
     width: 100%;
     height: 100%;
+    min-height: 200px;
     overflow-y: hidden;
     overflow-x: scroll;
+    z-index: 3;
+  }
+
+  .tab-switcher-background {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
   }
 }
 </style>
