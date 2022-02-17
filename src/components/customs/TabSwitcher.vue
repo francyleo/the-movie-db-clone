@@ -33,7 +33,7 @@ export default {
       return this.tabs.map(tab => tab.title);
     },
     activeTab() {
-      return this.tabs.findIndex(tab => tab.isActive);
+      return this.tabs.find(tab => tab.isActive)?.title;
     },
   },
   methods: {
