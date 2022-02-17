@@ -42,9 +42,9 @@ export default {
         tab.isActive = tabIndex === index;
       });
     },
+    registerTab(tab) {
+      this.tabs.push(tab);
   },
-  created() {
-    this.tabs = this.$children;
   },
 };
 </script>
