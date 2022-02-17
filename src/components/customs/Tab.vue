@@ -1,7 +1,9 @@
 <template>
-  <div v-show="isActive">
-    <slot />
-  </div>
+  <transition name="fade">
+    <div v-if="isActive">
+      <slot />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -20,8 +22,37 @@ export default {
   data: () => ({
     isActive: false,
   }),
-  mounted() {
+  created() {
     this.isActive = this.selected;
+    this.$parent.registerTab(this);
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 500ms ease-in-out;
+}
+
+.fade-enter-to {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+.fade-leave-to {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+.fade-enter-from {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+.fade-leave-from {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+</style>
