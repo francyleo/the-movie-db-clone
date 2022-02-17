@@ -37,9 +37,9 @@ export default {
     },
   },
   methods: {
-    onChangeTab(index) {
-      this.tabs.forEach((tab, tabIndex) => {
-        tab.isActive = tabIndex === index;
+    onChangeTab(tabSelected) {
+      this.tabs.forEach(tab => {
+        tab.isActive = tab.title === tabSelected;
       });
     },
     registerTab(tab) {
