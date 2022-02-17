@@ -1,5 +1,7 @@
 # The Movie DB Clone
 
+![image](https://user-images.githubusercontent.com/41713646/154427578-7de5c737-3beb-4a73-8383-d6a2bd8d9669.png)
+
 ## Project setup
 
 ```
@@ -32,3 +34,4 @@ VUE_APP_THE_MOVIE_DB_API_KEY=
 ```
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
