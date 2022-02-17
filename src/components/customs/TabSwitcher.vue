@@ -59,7 +59,7 @@ export default {
     },
     registerTab(tab) {
       this.tabs.push(tab);
-  },
+    },
   },
 };
 </script>
