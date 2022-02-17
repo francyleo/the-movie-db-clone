@@ -19,7 +19,7 @@
 <script>
 import basics from '@/mixins/basics';
 
-import Banner from '@assets/banner/soul_banner.jpg';
+import Banner from '@assets/banner/jpg/soul_banner.jpg';
 
 export default {
   mixins: [basics],

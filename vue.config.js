@@ -17,4 +17,12 @@ module.exports = {
       },
     },
   },
+  configureWebpack: {
+    devServer: {
+      watchOptions: {
+        poll: 1000,
+        ignored: [/node_modules/, /public/],
+      },
+    },
+  },
 };

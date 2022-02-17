@@ -137,6 +137,7 @@ export default {
     }
 
     p {
+      margin-bottom: 0;
       color: var(--bs-black);
       opacity: 0.5;
     }

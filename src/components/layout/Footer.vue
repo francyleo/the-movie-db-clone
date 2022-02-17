@@ -189,7 +189,7 @@
 </template>
 
 <script>
-import LogoFooter from '@assets/logos/tmdb_footer_logo.svg';
+import LogoFooter from '@assets/logos/svg/tmdb_footer_logo.svg';
 
 export default {
   data: () => ({
