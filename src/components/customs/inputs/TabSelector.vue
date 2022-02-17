@@ -5,7 +5,7 @@
       :key="index"
       ref="tabs"
       class="tab-selector-tab no-select"
-      @click="activeTab(index)"
+      @click="activeTab(tab)"
     >
       {{ tab }}
     </span>
@@ -16,37 +16,45 @@
 <script>
 export default {
   props: {
-    defaultActiveTab: {
-      type: Number,
-      default: 0,
-    },
     tabs: {
       type: Array,
       required: true,
     },
+    initialTab: {
+      type: String,
+      default: '',
+    },
   },
   methods: {
-    activeTab(tabIndex) {
+    activeTab(tab) {
       if (!this.$refs['tabs']) return;
+      const activeTabIndex = this.getTabIndex(tab);
+      this.setSliderPosition(activeTabIndex);
 
+      this.$refs['tabs'].forEach((_tab, index) => {
+        if (index === activeTabIndex) {
+          _tab.classList.add('active');
+          return;
+        }
+
+        _tab.classList.remove('active');
+      });
+
+      this.$emit('onChange', tab);
+    },
+    setSliderPosition(tabIndex) {
       const threshold = 1;
       const currentTab = this.$refs['tabs'][tabIndex];
       const { offsetLeft, offsetWidth } = currentTab;
-
       this.$refs['slider'].style.left = `${offsetLeft}px`;
       this.$refs['slider'].style.width = `${offsetWidth + threshold}px`;
-
-      currentTab.classList.add('active');
-      this.$refs['tabs'].forEach((tab, index) => {
-        if (index === tabIndex) return;
-        tab.classList.remove('active');
-      });
-
-      this.$emit('onChange', tabIndex);
+    },
+    getTabIndex(tab) {
+      return this.tabs.findIndex(_tab => _tab === tab);
     },
   },
   mounted() {
-    this.activeTab(this.defaultActiveTab);
+    this.activeTab(this.initialTab);
   },
 };
 </script>
