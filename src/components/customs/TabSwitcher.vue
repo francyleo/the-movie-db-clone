@@ -111,7 +111,7 @@ export default {
     min-height: 200px;
     overflow-y: hidden;
     overflow-x: scroll;
-    z-index: 3;
+    z-index: 1;
   }
 
   .tab-switcher-background {
