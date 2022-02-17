@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import Logo from '@assets/logos/tmdb_logo.svg';
+import Logo from '@assets/logos/svg/tmdb_logo.svg';
 
 export default {
   data: () => ({
