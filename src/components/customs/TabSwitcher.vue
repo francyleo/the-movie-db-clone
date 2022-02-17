@@ -12,6 +12,11 @@
     <div class="tab-switcher-content">
       <slot />
     </div>
+    <div class="tab-switcher-background">
+      <slot name="background" v-bind="{ background }">
+        <BetterImage v-if="background" :image="background" />
+      </slot>
+    </div>
   </div>
 </template>
 
@@ -22,6 +27,10 @@ export default {
       type: String,
       default: '',
     },
+    background: {
+      type: [String, Function],
+      default: '',
+    },
     invertColors: {
       type: Boolean,
       default: false,
@@ -29,6 +38,7 @@ export default {
   },
   components: {
     TabSelector: () => import('@components/customs/inputs/TabSelector'),
+    BetterImage: () => import('@components/customs/BetterImage'),
   },
   data: () => ({
     tabs: [],
