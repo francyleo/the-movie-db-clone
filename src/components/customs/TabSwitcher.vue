@@ -1,10 +1,11 @@
 <template>
   <div class="tab-switcher-container">
     <div class="tab-switcher-header">
-      <h2 class="text-black">{{ title }}</h2>
+      <h2 :class="{ 'title-in-background': invertColors }">{{ title }}</h2>
       <TabSelector
         :tabs="tabsNormalized"
-        :defaultActiveTab="activeTab"
+        :initialTab="activeTab"
+        :invertColors="invertColors"
         @onChange="onChangeTab"
       />
     </div>
@@ -20,6 +21,10 @@ export default {
     title: {
       type: String,
       default: '',
+    },
+    invertColors: {
+      type: Boolean,
+      default: false,
     },
   },
   components: {
