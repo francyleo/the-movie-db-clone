@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "curl": "curl https://api.useflipsaude.com.br/api/v1/out/geral/notificaDeploy"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.25.0",
